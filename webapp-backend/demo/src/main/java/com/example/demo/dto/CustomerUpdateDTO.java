@@ -1,37 +1,19 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
-import javax.persistence.*;
-@Entity
-@Table(name = "customer")
-public class Customer {
-    @Id
-    @Column(name = "customer_id", length = 50)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class CustomerUpdateDTO {
     private int customerid;
- 
-    @Column(name = "customer_name", length = 50)
     private String customername;
- 
-    @Column(name = "customer_address", length = 60)
     private String customeraddress;
- 
-    @Column(name = "mobile", length = 12)
     private int mobile;
  
-    public Customer(int customerid, String customername, String customeraddress, int mobile) {
+    public CustomerUpdateDTO(int customerid, String customername, String customeraddress, int mobile) {
         this.customerid = customerid;
         this.customername = customername;
         this.customeraddress = customeraddress;
         this.mobile = mobile;
     }
  
-    public Customer() {
-    }
- 
-    public Customer(String customername, String customeraddress, int mobile) {
-        this.customername = customername;
-        this.customeraddress = customeraddress;
-        this.mobile = mobile;
+    public CustomerUpdateDTO() {
     }
  
     public int getCustomerid() {
@@ -68,7 +50,7 @@ public class Customer {
  
     @Override
     public String toString() {
-        return "Customer{" +
+        return "CustomerDTO{" +
                 "customerid=" + customerid +
                 ", customername='" + customername + '\'' +
                 ", customeraddress='" + customeraddress + '\'' +
